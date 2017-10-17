@@ -21,8 +21,8 @@ class Queue {
     }
 
     public int get() throws DataStructureEmpty {        //create a get method
-        if (getLocation==putLocation){                  //if getLocation is not the same as putLocation
-            throw new DataStructureEmpty(getLocation);  //throw DataStructureEmpty exception
+        if (getLocation==putLocation){                  //if getLocation is the same as putLocation
+            throw new DataStructureEmpty();  //throw DataStructureEmpty exception
         }else
         return q[getLocation++];                        //if false returns value at location then increments locations by 1
     }

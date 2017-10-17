@@ -26,7 +26,7 @@ public class Stack {
     public void pop() throws DataStructureEmpty {
 
             if (location==0){                                 // if location is 0 then stack is empty
-                throw new DataStructureEmpty(location);       //throw DataStructureEmpty exception
+                throw new DataStructureEmpty();       //throw DataStructureEmpty exception
             } else
                 location--;                          //decrement the location to the last index the last value was set
             System.out.println(ch[location]);        //print out last value entered
