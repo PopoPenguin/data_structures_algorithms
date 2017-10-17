@@ -1,11 +1,12 @@
 package data_structures.array_based;
 
-public class StackFull extends Exception {
+public class DataStructureFull extends Exception {
 
     int i ;
 
 
-    public StackFull(int i) {
+
+    public DataStructureFull(int i) {
         this.i = i;
     }
 

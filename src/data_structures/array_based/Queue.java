@@ -11,30 +11,24 @@ class Queue {
 
     }
 
-    public void put(int num) {                  //creates a put method
+    public void put(int num) throws DataStructureFull {                  //creates a put method
         if (putLocation == q.length) {                  //tests if the queue is full
-            System.out.println("Queue is full");
-            return;
-        }
+            throw new DataStructureFull(putLocation);   //throw DataStructureFull exception
+        }else
         q[putLocation++] = num;                 //if not takes integer and places in q[putLocation] then increments by 1
 
         return;
     }
 
-    public int get() {                          //create a get method
-        if (getLocation==putLocation){          //if getLocation is not the same as putLocation
-            System.out.println("Spot is empty");    //states queue is empty and returns 0
-            return 0;
-        }
-
-        return q[getLocation++];                //if false returns value at location
+    public int get() throws DataStructureEmpty {        //create a get method
+        if (getLocation==putLocation){                  //if getLocation is not the same as putLocation
+            throw new DataStructureEmpty(getLocation);  //throw DataStructureEmpty exception
+        }else
+        return q[getLocation++];                        //if false returns value at location then increments locations by 1
     }
 
-    public int size(){                       //create a method to determine size of array q
+    public int size(){                                  //create a method to determine size of array q
 
-        return q.length;
+        return q.length;                                //returning length of q array
     }
 }
-
-
-

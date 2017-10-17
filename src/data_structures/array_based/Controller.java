@@ -10,14 +10,16 @@ public class Controller {
         int size = input.nextInt();
         System.out.println();
         Stack test = new Stack(size);
+        Queue test1 = new Queue(size);
 
         char ex = 'a';
+        int exp = 1;
 
         while (true){
             try {
                 test.push((ex++));
-            } catch (StackFull stackFull) {
-                stackFull.printStackTrace();
+            } catch (DataStructureFull e) {
+                System.out.println(e.toString());
                 break;
             }
         }
@@ -27,10 +29,36 @@ public class Controller {
 
             try {
                 test.pop();
-            } catch (StackEmpty stackEmpty) {
-                stackEmpty.printStackTrace();
+            } catch (DataStructureEmpty e) {
+                System.out.println(e.toString());
             }
 
         }
+
+        System.out.println();
+
+
+        while (true){
+            try {
+                test1.put((exp++));
+            } catch (DataStructureFull e) {
+                System.out.println(e.toString());
+                break;
+            }
+        }
+
+
+        for (int i =0; i<=test1.size();i++) {
+
+            try {
+                System.out.println(test1.get());
+            } catch (DataStructureEmpty e) {
+                System.out.println(e.toString());
+            }
+
+        }
+
+
+
     }
 }
