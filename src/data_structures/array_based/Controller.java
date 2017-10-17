@@ -11,19 +11,26 @@ public class Controller {
         System.out.println();
         Stack test = new Stack(size);
 
-        test.pushLoc('a');
-        test.pushLoc('b');
-        test.pushLoc('c');
-        test.pushLoc('d');
-        test.pushLoc('e');
+        char ex = 'a';
+
+        while (true){
+            try {
+                test.push((ex++));
+            } catch (StackFull stackFull) {
+                stackFull.printStackTrace();
+                break;
+            }
+        }
 
 
         for (int i =test.getLocation(); i>=0;i--) {
 
-            test.popLoc();
+            try {
+                test.pop();
+            } catch (StackEmpty stackEmpty) {
+                stackEmpty.printStackTrace();
+            }
 
         }
-
-
     }
 }
